@@ -17,30 +17,24 @@ const mappings = {
   // ==========================================================================
   "background: #fff": "background: #181818",
   "background: #fafbfc": "background: #181818",
-  "background: #f6f8fa": "background: #202020",
   "background: #eaecef": "background: #343434",
   "background: #d1d5da": "background: #444",
+  "background: #fffbdd": "background: #261d08",
+  "background: #0366d6": "background: /*[[base-color]]*/ #4f8cc9",
 
   "background-color: #fff": "background-color: #181818",
   "background-color: #fafbfc": "background-color: #181818",
-  "background-color: #f6f8fa": "background-color: #202020",
   "background-color: #eaecef": "background-color: #343434",
   "background-color: #d1d5da": "background-color: #444",
-
   "background-color: #6a737d": "background-color: #222",
-
-  // some navigation focuses use this, like notifications
   "background-color: #f1f8ff": "background-color: #242424",
-
-  // Colors *after* grey scale
   "background-color: #2cbe4e": "background-color: #163",
   "background-color: #dbedff": "background-color: #182030",
   "background-color: #fffbdd": "background-color: #261d08",
-  "background: #0366d6": "background: /*[[base-color]]*/ #4183c4",
-  "background-color: #0366d6": "background-color: /*[[base-color]]*/ #4183c4 !important; color: #fff",
+  "background-color: #0366d6": "background-color: /*[[base-color]]*/ #4f8cc9 !important; color: #fff",
 
-  "background: #dbedff": "background: #273045",
-  "background: #fffbdd": "background: #261d08",
+  // needs to be after ##2cbe4e for .community-checklist .progress vs .progress-bar .progress
+  "background-color: #f6f8fa": "background-color: #202020",
 
   // ==========================================================================
   // Border
@@ -48,13 +42,12 @@ const mappings = {
 
   "border: 1px solid #e1e4e8": "border-color: #343434",
   "border: 1px solid #eee": "border-color: #343434",
-  "border: 1px solid rgba(27,31,35,.15)": "border-color: rgba(225,225,225,0.2)",
+  "border: 1px solid rgba(27,31,35,.15)": "border-color: rgba(225,225,225,.2)",
   "border: 2px solid #fff": "border-color: #222",
   "border: solid #ddd": "border-color: #484848",
 
   "border-color: #e1e4e8": "border-color: #343434",
   "border-color: #eaecef": "border-color: #343434",
-  "border-color: #dfe2e5": "border-color: #484848",
   "border-bottom-color: #e36209": "border-bottom-color: #eee",
 
   "border-bottom: 1px solid #f8f8f8": "border-bottom: 1px solid #343434",
@@ -93,19 +86,20 @@ const mappings = {
   "border-top: 7px solid #fff": "border-top: 7px solid #181818",
   "border-top: 8px solid rgba(27,31,35,.15)": "border-top: 8px solid #343434",
 
-  "border-color: #2188ff": "border-color: /*[[base-color]]*/ #4183c4",
+  "border-color: #2188ff": "border-color: /*[[base-color]]*/ #4f8cc9",
+  "border-color: #dfe2e5 #dfe2e5 #fff": "border-color: #484848",
 
   // ==========================================================================
   // Box-Shadow
   // ==========================================================================
 
   "box-shadow: 0 0 0 .2em rgba(3,102,214,.3)": `
-     box-shadow: 0 0 0 .2em rgba(65,131,196,.4) !important;
+     box-shadow: 0 0 0 .2em rgba(79,140,201,.4) !important;
      box-shadow: 0 0 0 .2em rgba(/*[[base-color-rgb]]*/, .4)
   `,
 
   "box-shadow: 0 0 0 .2em #c8e1ff": `
-     box-shadow: 0 0 0 .2em rgba(65,131,196,.4) !important;
+     box-shadow: 0 0 0 .2em rgba(79,140,201,.4) !important;
      box-shadow: 0 0 0 .2em rgba(/*[[base-color-rgb]]*/, .4)
   `,
 
@@ -115,7 +109,8 @@ const mappings = {
   // Color / Background
   // ==========================================================================
 
-  "color: #3c4146": "color: #bababa",
+  "color: #333": "color: #bebebe",
+  "color: #3c4146": "color: #bebebe",
   "color: #444d56": "color: #afafaf",
   "color: #666"   : "color: #8e8e8e",
   "color: #6a737d": "color: #8e8e8e",
@@ -123,9 +118,11 @@ const mappings = {
   "color: #a3aab1": "color: #5a5a5a",
   "color: #c6cbd1": "color: #474747",
   "color: rgba(27,31,35,.85)": "color: rgba(230,230,230,.85)",
+  "color: hsla(0,0%,100%,.5)": "color: hsla(0,0%,100%,.5)",
+  "color: hsla(0,0%,100%,.6)": "color: hsla(0,0%,100%,.6)",
 
   // needs to be after #333 for .btn vs .btn-outline
-  "color: #0366d6": "color: /*[[base-color]]*/ #4183c4",
+  "color: #0366d6": "color: /*[[base-color]]*/ #4f8cc9",
   // needs to be after #0366d3 for .btn-link vs .text-gray
   "color: #586069": "color: #949494",
   // needs to be after #0366d3 for .btn-link vs .text-gray-dark
@@ -166,6 +163,12 @@ const urls = [
   {url: "https://help.github.com"},
   {url: "https://developer.github.com"},
   // {url: "https://github.com/login", opts: {headers: {"User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Mobile Safari/537.36"}}},
+];
+
+// list of additional style URLs to pull
+const additionalStyleUrls = [
+  "https://raw.githubusercontent.com/sindresorhus/refined-github/master/source/content.css",
+  "https://raw.githubusercontent.com/sindresorhus/refined-github/master/source/options.css",
 ];
 
 // list of regexes matching selectors that should be ignored
@@ -221,11 +224,11 @@ async function writeOutput(generatedCss) {
 async function extractStyleLinks(responses) {
   const styleUrls = [];
   for (const res of responses) {
-    extractStyleHrefs(await res.text()).forEach(href => {
+    for (const href of extractStyleHrefs(await res.text())) {
       styleUrls.push(urlToolkit.buildAbsoluteURL(res.url, href));
-    });
+    }
   }
-  return styleUrls;
+  return styleUrls.concat(additionalStyleUrls);
 }
 
 function extractStyleHrefs(html) {
@@ -257,8 +260,9 @@ function parseDeclarations(cssString) {
 }
 
 function parseRule(decls, rule) {
-  rule.declarations.forEach(decl => {
-    Object.keys(mappings).forEach(mapping => {
+  for (const decl of rule.declarations) {
+    for (const mapping of Object.keys(mappings)) {
+      if (!decl.value) continue;
       if (!decls[mapping]) decls[mapping] = [];
       const [prop, val] = mapping.split(": ");
       decl.value = decl.value.replace(/!important/g, "").trim(); // remove !important
@@ -283,8 +287,8 @@ function parseRule(decls, rule) {
           }
         });
       }
-    });
-  });
+    }
+  }
 }
 
 function buildOutput(decls) {
